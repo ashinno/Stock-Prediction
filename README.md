@@ -4,7 +4,7 @@ This is a stock forecast app that uses Facebook's Prophet library to predict the
 To execute this app, you need to have the following libraries installed: streamlit, fbprophet, yfinance, and plotly. You can install these libraries by running the following command in your terminal:
 
 ```
-pip install streamlit fbprophet yfinance plotly
+pip install streamlit prophet yfinance plotly
 ```
 
 Once you have installed the required libraries, you can run the app by copying the code into a Python file and running it using the following command:
