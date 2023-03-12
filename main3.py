@@ -7,7 +7,7 @@ from prophet.plot import plot_plotly
 from plotly import graph_objs as go
 import pandas as pd
 
-st.title('Stock Forecast App By Ash')
+st.title('StockWise By Ash')
 
 stocks = ('GOOG', 'AAPL', 'MSFT', 'AMZN', 'NVDA', 'JPM', 'TSLA')
 selected_stocks = st.multiselect('Select datasets for prediction', stocks)
