@@ -18,7 +18,7 @@ end_date = st.date_input('End date', date.today())
 n_years = st.slider('Years of prediction:', 1, 4)
 period = n_years * 365
 
-@st.cache_data # @ st.cache_resource
+@st.cache_data 
 def load_data(tickers, start, end):
     data = pd.DataFrame()
     for ticker in tickers:
