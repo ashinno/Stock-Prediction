@@ -1,5 +1,3 @@
-# this version  allows the user to select a custom date range for the data, 
-# you can add two date input widgets using
 
 import streamlit as st
 from datetime import date
