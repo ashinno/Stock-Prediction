@@ -11,7 +11,7 @@ import pandas as pd
 
 st.title('Stock Forecast App By Ash')
 
-stocks = ('GOOG', 'AAPL', 'MSFT', 'AMZN','NVDA','FB')
+stocks = ('GOOG', 'AAPL', 'MSFT', 'AMZN', 'NVDA', 'JPM', 'TSLA')
 selected_stocks = st.multiselect('Select datasets for prediction', stocks)
 
 start_date = st.date_input('Start date', date(2020, 1, 1))
