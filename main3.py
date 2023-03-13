@@ -48,7 +48,11 @@ st.write(data.tail())
 
 
 # Define a function to create a download link
-
+def create_download_link(df, filename):
+    csv = df.to_csv(index=False)
+    b64 = base64.b64encode(csv.encode()).decode()
+    href = f'<a href="data:file/csv;base64,{b64}" download="{filename}.csv">Download {filename} as CSV</a>'
+    return href
 
 # Add a button to trigger the download
 if st.button('Download data as CSV'):
