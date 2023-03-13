@@ -48,13 +48,11 @@ st.write(data.tail())
 
 
 # Define a function to create a download link
-def create_download_link(df, filename):
-    csv = df.to_csv(index=False)
-    b64 = base64.b64encode(csv.encode()).decode()
-    href = f'<a href="data:file/csv;base64,{b64}" download="{filename}.csv">Download {filename} as CSV</a>'
-    return href
 
 
+# Add a button to trigger the download
+if st.button('Download data as CSV'):
+    st.markdown(create_download_link(data, 'stock_data'), unsafe_allow_html=True)
 
 def plot_raw_data():
     fig = go.Figure()
@@ -64,10 +62,17 @@ def plot_raw_data():
         fig.add_trace(go.Scatter(x=df['Date'], y=df['Close'], name=f"{ticker}_close"))
 
         # Add 20-day moving average if checkbox is checked
-      
+        if add_ma20:
+            df['MA20'] = ta.trend.sma_indicator(df['Close'], window=20)
+            fig.add_trace(go.Scatter(x=df['Date'], y=df['MA20'], name=f"{ticker}_MA20"))
 
         # Add Bollinger Bands if checkbox is checked
-      
+        if add_bb:
+            indicator_bb = ta.volatility.BollingerBands(close=df["Close"], window=20, window_dev=2)
+            df['bb_high'] = indicator_bb.bollinger_hband()
+            df['bb_low'] = indicator_bb.bollinger_lband()
+            fig.add_trace(go.Scatter(x=df['Date'], y=df['bb_high'], name=f"{ticker}_bb_high", line=dict(dash='dash')))
+            fig.add_trace(go.Scatter(x=df['Date'], y=df['bb_low'], name=f"{ticker}_bb_low", line=dict(dash='dash')))
 
         # Add MACD if checkbox is checked
         if add_macd:
