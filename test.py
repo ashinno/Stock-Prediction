@@ -46,7 +46,7 @@ def load_news_data(tickers, start, end):
     for ticker in tickers:
         # Code to scrape news articles or social media posts related to the selected stock
         # Here's an example using the Google News API
-        newsapi = NewsApiClient(api_key='70c97f45d354405d9a8b9f776152654d')
+        newsapi = NewsApiClient(api_key='YOUR API')
         articles = newsapi.get_everything(q=ticker, from_param=start, to=end, language='en')
         for article in articles['articles']:
             data = data.append({'Date': article['publishedAt'], 'text': article['description'], 'ticker': ticker}, ignore_index=True)
