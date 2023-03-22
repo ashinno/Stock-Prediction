@@ -20,7 +20,7 @@ stocks = ('GOOG', 'AAPL', 'MSFT', 'AMZN', 'NVDA', 'JPM', 'TSLA')
 # Allow the user to select which stocks to predict
 selected_stocks = st.multiselect('Select datasets for prediction', stocks)
 
-# Allow the user to select the start and end dates for the data
+
 start_date = st.date_input('Start date', date(2020, 1, 1))
 end_date = st.date_input('End date', date.today())
 
