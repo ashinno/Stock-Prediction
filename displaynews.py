@@ -28,7 +28,7 @@ end_date = st.date_input('End date', date.today())
 n_years = st.slider('Years of prediction:', 1, 4)
 period = n_years * 365
 
-# Allow the user to choose whether to add a 20-day moving average, Bollinger Bands, MACD, and sentiment analysis
+
 add_ma20 = st.checkbox('Add 20-day moving average')
 add_bb = st.checkbox('Add Bollinger Bands')
 add_macd = st.checkbox('Add MACD')
