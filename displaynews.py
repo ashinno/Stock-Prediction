@@ -11,7 +11,7 @@ import ta
 from textblob import TextBlob
 from newsapi import NewsApiClient
 
-# Set the title of the app
+
 st.title('StockWise By Ash')
 
 # Define the list of stocks to choose from
