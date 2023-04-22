@@ -1,3 +1,9 @@
+This code creates a Streamlit web application that allows users to predict stock prices using the Prophet algorithm, view stock data and news articles of selected stocks. On the sidebar, there are three options; Home, News, and Stock Prices. Home provides instructions on how to use the app while News and Stock Prices provide functionality for the stock data and news articles.
+
+The first section, Home, displays the welcome message and instructions for the user. The second section, News, displays news articles related to the selected stocks. The user can select which stocks to predict, start and end dates. The function load_news_data scrapes news articles or social media posts related to the selected stocks.
+
+The third section, Stock Prices, displays the stock prices using the Prophet algorithm. The user selects datasets for prediction, date range for analysis, and various technical indicators to add to the chart. The app uses the yfinance library to download stock data from Yahoo Finance for selected tickers and date range. The Prophet algorithm predicts future stock prices based on the historical data. Selecting technical indicators such as moving averages and Bollinger Bands can also display in the chart.
+
 To execute the code, you need to follow these steps:
  
 1. Make sure you have Python installed on your computer.
