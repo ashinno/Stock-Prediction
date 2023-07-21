@@ -69,7 +69,6 @@ if choice == "Home":
     st.write("17. To exit the app, simply close the web browser tab or press Ctrl+C in the terminal window.")
 
 elif choice == "News":
-
 # Define the list of stocks to choose from
     stocks = ('GOOG', 'AAPL', 'MSFT', 'AMZN', 'NVDA', 'JPM', 'TSLA')
 
